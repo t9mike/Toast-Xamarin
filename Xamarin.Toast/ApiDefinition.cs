@@ -9,7 +9,7 @@ using CoreText;
 namespace Xamarin.Toast
 {
     [Static]
-    partial interface Constants
+    partial interface ToastConstants
     {
         // extern const NSString * CSToastPositionTop;
         [Field("CSToastPositionTop", "__Internal")]
@@ -43,7 +43,7 @@ namespace Xamarin.Toast
 
         // -(void)makeToast:(NSString *)message duration:(NSTimeInterval)duration position:(id)position title:(NSString *)title image:(UIImage *)image style:(CSToastStyle *)style completion:(void (^)(BOOL))completion;
         [Export("makeToast:duration:position:title:image:style:completion:")]
-        void MakeToast(string message, double duration, NSObject position, string title, UIImage image, CSToastStyle style, Action<bool> completion);
+        void MakeToast(string message, double duration, NSObject position, string title, UIImage image, [NullAllowed] CSToastStyle style, Action<bool> completion);
 
         // -(UIView *)toastViewForMessage:(NSString *)message title:(NSString *)title image:(UIImage *)image style:(CSToastStyle *)style;
         [Export("toastViewForMessage:title:image:style:")]
